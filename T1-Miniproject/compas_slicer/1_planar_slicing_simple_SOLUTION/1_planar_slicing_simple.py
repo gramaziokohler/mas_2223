@@ -15,6 +15,7 @@ from compas_slicer.print_organization import add_safety_printpoints
 from compas_slicer.print_organization import set_linear_velocity_constant
 from compas_slicer.print_organization import set_blend_radius
 from compas_slicer.utilities import save_to_json
+from compas_view2.app import App
 
 from compas.datastructures import Mesh
 from compas.geometry import Point
@@ -70,8 +71,9 @@ def main():
     # ==========================================================================
     # Simplify the paths by removing points with a certain threshold
     # change the threshold value to remove more or less points
+    # the higher the threshold the more point will be removed
     # ==========================================================================
-    simplify_paths_rdp(slicer, threshold=0.7)
+    simplify_paths_rdp(slicer, threshold=0.3)
 
     # ==========================================================================
     # Smooth the seams between layers
@@ -117,6 +119,12 @@ def main():
     end_time = time.time()
     print("Total elapsed time", round(end_time - start_time, 2), "seconds")
 
+    # ===========================================================================
+    # Viewer
+    # ===========================================================================
+    # viewer = App(width=1600, height=900)
+    # slicer.visualize_on_viewer(viewer)
+    # viewer.show()
 
 if __name__ == "__main__":
     main()
