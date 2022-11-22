@@ -15,6 +15,7 @@ from compas_slicer.print_organization import add_safety_printpoints
 from compas_slicer.print_organization import set_linear_velocity_constant
 from compas_slicer.print_organization import set_blend_radius
 from compas_slicer.utilities import save_to_json
+from compas_view2.app import App
 
 from compas.datastructures import Mesh
 from compas.geometry import Point
@@ -28,9 +29,9 @@ logging.basicConfig(format='%(levelname)s-%(message)s', level=logging.INFO)
 # ==============================================================================
 # Select location of data folder and specify model to slice
 # ==============================================================================
-DATA = os.path.join(os.path.dirname(__file__), 'data')
-OUTPUT_DIR = utils.get_output_directory(DATA)  # creates 'output' folder if it doesn't already exist
-MODEL = 'simple_vase_open_low_res.obj'
+#DATA = 
+#OUTPUT_DIR =  # create 'output' folder if it doesn't already exist
+MODEL = ''
 
 
 def main():
@@ -89,10 +90,10 @@ def main():
     # ==========================================================================
     # Set fabrication-related parameters
     # ==========================================================================
-    set_extruder_toggle(print_organizer, slicer)
-    add_safety_printpoints(print_organizer, z_hop= 10.0)
-    ...
-    ...
+    #set_extruder_toggle
+    #add_safety_printpoints
+    #set_linear_velocity_constant
+    #set_blend_radius
 
     # ==========================================================================
     # Prints out the info of the PrintOrganizer
