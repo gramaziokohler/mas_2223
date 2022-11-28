@@ -3,7 +3,7 @@ import numpy as np
 import sys
 from compas.geometry import Polyline, Point, Curve
 
-def get_contours(path = path, t_val = 100):
+def get_contours(path = None, t_val = 100):
     img = cv2.imread(path)
     scale_percent = 60 # percent of original size
     width = int(img.shape[1] * scale_percent / 100)
