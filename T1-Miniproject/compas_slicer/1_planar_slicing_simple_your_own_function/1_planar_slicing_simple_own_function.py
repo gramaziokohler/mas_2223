@@ -87,40 +87,40 @@ def main():
     # ==========================================================================
     # Prints out the info of the slicer
     # ==========================================================================
-    slicer.printout_info()
+    # slicer.printout_info()
 
     # ==========================================================================
     # Save slicer data to JSON
     # ==========================================================================
-    save_to_json(slicer.to_data(), OUTPUT_DIR, 'slicer_data.json')
+    # save_to_json(slicer.to_data(), OUTPUT_DIR, 'slicer_data.json')
 
     # ==========================================================================
     # Initializes the PlanarPrintOrganizer and creates PrintPoints
     # ==========================================================================
-    print_organizer = PlanarPrintOrganizer(slicer)
-    print_organizer.create_printpoints()
+    # print_organizer = PlanarPrintOrganizer(slicer)
+    # print_organizer.create_printpoints()
 
     # ==========================================================================
     # Set fabrication-related parameters
     # ==========================================================================
-    set_extruder_toggle(print_organizer, slicer)
-    add_safety_printpoints(print_organizer, z_hop=10.0)
-    set_linear_velocity_constant(print_organizer, v=100.0)
-    set_blend_radius(print_organizer, d_fillet=10.0)
+    # set_extruder_toggle(print_organizer, slicer)
+    # add_safety_printpoints(print_organizer, z_hop=10.0)
+    # set_linear_velocity_constant(print_organizer, v=100.0)
+    # set_blend_radius(print_organizer, d_fillet=10.0)
 
     # ==========================================================================
     # Prints out the info of the PrintOrganizer
     # ==========================================================================
-    print_organizer.printout_info()
+    # print_organizer.printout_info()
 
     # ==========================================================================
     # Converts the PrintPoints to data and saves to JSON
     # =========================================================================
-    printpoints_data = print_organizer.output_printpoints_dict()
-    utils.save_to_json(printpoints_data, OUTPUT_DIR, 'out_printpoints.json')
+    # printpoints_data = print_organizer.output_printpoints_dict()
+    # utils.save_to_json(printpoints_data, OUTPUT_DIR, 'out_printpoints.json')
 
-    end_time = time.time()
-    print("Total elapsed time", round(end_time - start_time, 2), "seconds")
+    # end_time = time.time()
+    # print("Total elapsed time", round(end_time - start_time, 2), "seconds")
 
     # ===========================================================================
     # Viewer
